@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListSiswaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:link outcome="/index" value="#{bundle.ListSiswaIndexLink}"/>
+                <br />
+                <br />
+                <h:commandLink action="#{siswaController.prepareCreate}" value="#{bundle.ListSiswaCreateLink}"/>
+                <br/>
+                <br/>
+                <br/>
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListSiswaEmpty}" rendered="#{siswaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{siswaController.items.rowCount > 0}">
+                    <h:outputText value="#{siswaController.pagination.pageFirstItem + 1}..#{siswaController.pagination.pageLastItem + 1}/#{siswaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{siswaController.previous}" value="#{bundle.Previous} #{siswaController.pagination.pageSize}" rendered="#{siswaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{siswaController.next}" value="#{bundle.Next} #{siswaController.pagination.pageSize}" rendered="#{siswaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{siswaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_namaDepan}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.namaDepan}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_namaBelakang}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.namaBelakang}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_jenisKelamin}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.jenisKelamin}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_kelas}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.kelas}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_namaSekolah}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.namaSekolah}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_alamat}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.alamat}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_telp}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.telp}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_email}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.email}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_quest1}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.quest1}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_quest2}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.quest2}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_quest3}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.quest3}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListSiswaTitle_quest4}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.quest4}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{siswaController.prepareView}" value="#{bundle.ListSiswaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{siswaController.prepareEdit}" value="#{bundle.ListSiswaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{siswaController.destroy}" value="#{bundle.ListSiswaDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>                
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

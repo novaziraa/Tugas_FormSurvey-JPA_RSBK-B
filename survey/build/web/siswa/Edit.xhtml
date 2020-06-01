@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.EditSiswaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:link outcome="/index" value="#{bundle.EditSiswaIndexLink}" />                
+                <br />
+                <br />
+                <h:commandLink action="#{siswaController.prepareList}" value="#{bundle.EditSiswaShowAllLink}" immediate="true"/>
+                <br/>
+                <br/>
+                <br/>
+                <h:panelGrid columns="2">                    
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_namaDepan}" for="namaDepan" />
+                    <h:inputText id="namaDepan" value="#{siswaController.selected.namaDepan}" title="#{bundle.EditSiswaTitle_namaDepan}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_namaBelakang}" for="namaBelakang" />
+                    <h:inputText id="namaBelakang" value="#{siswaController.selected.namaBelakang}" title="#{bundle.EditSiswaTitle_namaBelakang}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_jenisKelamin}" for="jenisKelamin" />
+                    <h:inputText id="jenisKelamin" value="#{siswaController.selected.jenisKelamin}" title="#{bundle.EditSiswaTitle_jenisKelamin}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_kelas}" for="kelas" />
+                    <h:inputText id="kelas" value="#{siswaController.selected.kelas}" title="#{bundle.EditSiswaTitle_kelas}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_namaSekolah}" for="namaSekolah" />
+                    <h:inputText id="namaSekolah" value="#{siswaController.selected.namaSekolah}" title="#{bundle.EditSiswaTitle_namaSekolah}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_alamat}" for="alamat" />
+                    <h:inputText id="alamat" value="#{siswaController.selected.alamat}" title="#{bundle.EditSiswaTitle_alamat}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_telp}" for="telp" />
+                    <h:inputText id="telp" value="#{siswaController.selected.telp}" title="#{bundle.EditSiswaTitle_telp}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_email}" for="email" />
+                    <h:inputText id="email" value="#{siswaController.selected.email}" title="#{bundle.EditSiswaTitle_email}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_quest1}" for="quest1" />
+                    <h:inputText id="quest1" value="#{siswaController.selected.quest1}" title="#{bundle.EditSiswaTitle_quest1}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_quest2}" for="quest2" />
+                    <h:inputText id="quest2" value="#{siswaController.selected.quest2}" title="#{bundle.EditSiswaTitle_quest2}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_quest3}" for="quest3" />
+                    <h:inputText id="quest3" value="#{siswaController.selected.quest3}" title="#{bundle.EditSiswaTitle_quest3}" />
+                    <h:outputLabel value="#{bundle.EditSiswaLabel_quest4}" for="quest4" />
+                    <h:inputText id="quest4" value="#{siswaController.selected.quest4}" title="#{bundle.EditSiswaTitle_quest4}" />
+                </h:panelGrid>
+                <br />                
+                <h:commandLink action="#{siswaController.update}" value="#{bundle.EditSiswaSaveLink}"/>
+                <br />
+                <br />                
+                <br />
+                <br/>                
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
