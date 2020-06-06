@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 29 Bulan Mei 2020 pada 15.13
+-- Waktu pembuatan: 06 Jun 2020 pada 08.55
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.2.2
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `siswa`
+-- Database: `survey`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ CREATE TABLE `siswa` (
 --
 
 INSERT INTO `siswa` (`ID`, `nama_depan`, `nama_belakang`, `jenis_kelamin`, `kelas`, `nama_sekolah`, `alamat`, `telp`, `email`, `quest1`, `quest2`, `quest3`, `quest4`) VALUES
-(16, 'Mei', 'Maharini', 'perempuan', '12 IPA', 'SMAN 1', 'Semarang', '089237647431', 'mei@gmail.com', 'Tidak', 'Tidak Tertarik', '--', '--');
+(19, 'Dewi', 'Ardiningrum', 'perempuan', '3', 'SMAN 1 Pdg Panjang', 'Bukittinggi', '088299876654', 'dewi@gmail.com', 'Ya', 'Saintek', 'Orangtua', 'Sangat siap');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +69,7 @@ ALTER TABLE `siswa`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
